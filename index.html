@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+		<script type="text/javascript" src="jquery.focalpoint.js"></script>
+		<title>Focal point demo</title>
+		<style type="text/css">
+			body{
+				padding:0;
+				margin:0;
+			}
+			.focal_box{
+				position:relative;
+				display:block;
+				float:left;
+				cursor:pointer;
+			}
+			.focal_box img{
+				width:400px;
+			}
+			.focal_point{
+				min-height: 80px;
+				min-width: 80px;
+				border-radius: 40px;
+				margin-left: -40px;
+				margin-top: -40px;
+				background-color: transparent;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				left:0;
+				top: 0;
+				z-index:9999;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div data-box class="focal_box">
+			<img width="400" src="http://placekitten.com/400/250">
+			<div data-point class="focal_point"></div>
+			<div data-position class="focal_position"></div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var choose = $('[data-box]').focalpoint({
+					point: $('[data-point]'),
+					callback: function(pos){
+						 $('[data-position]').html(JSON.stringify(pos));
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
+
+
