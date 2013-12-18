@@ -1,4 +1,6 @@
 focalpoint
 ==========
 
-jquery.focalpoint.js calculates the x and y percentages for an image on click (takes into account page scroll). It can be used for an image cropping tool or something similar. 
+jquery.focalpoint.js calculates x and y coordinates as percentages for an image onclick, and also the reverse.
+
+Check out the demo http://jsfiddle.net/tamarasaurus/g8NzE/3/
